@@ -43,7 +43,7 @@ i,em{font-style:italic}
 .marca i{color:var(--oro)}
 
 /* ---------- 1 · Historia ---------- */
-.historia{position:relative;height:280svh;background:radial-gradient(90% 70% at 50% 45%,#FFFFFF 0%,var(--papel) 60%,var(--hundido) 100%)}
+.historia{position:relative;height:180svh;background:radial-gradient(90% 70% at 50% 45%,#FFFFFF 0%,var(--papel) 60%,var(--hundido) 100%)}
 .historia-fija{position:sticky;top:0;height:100svh;overflow:hidden}
 #lienzo{position:absolute;inset:0;width:100%;height:100%;z-index:3;pointer-events:none}
 .escena3d{position:absolute;inset:0;perspective:1600px;z-index:2;pointer-events:none}
