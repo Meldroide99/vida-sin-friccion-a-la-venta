@@ -35,6 +35,7 @@
     cw = cv.clientWidth; ch = cv.clientHeight;
     cv.width = Math.round(cw * dpr); cv.height = Math.round(ch * dpr);
   }
+  var pSuave = 0;
   function progreso() {
     if (reduce) return 1;
     var r = sec.getBoundingClientRect();
@@ -42,7 +43,11 @@
   }
 
   function dibujarHistoria(t) {
-    var p = progreso(), movil = cw < 861;
+    // la animación sigue al scroll con retardo suave: aunque el dedo vaya rápido, las fases se ven enteras
+    var objetivo = progreso();
+    pSuave += (objetivo - pSuave) * (reduce ? 1 : 0.06);
+    if (Math.abs(objetivo - pSuave) < 0.0004) pSuave = objetivo;
+    var p = pSuave, movil = cw < 861;
 
     // textos por fases
     textos.forEach(function (el) {
